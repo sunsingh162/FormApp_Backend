@@ -12,7 +12,6 @@ authRouter.post("/signup", async (req, res) => {
     validateData(req);
 
     const { userName, email, password } = req.body;
-    //Encrypt the password
     const hashPassword = await bcrypt.hash(password, 10);
 
     const user = new UserModel({
@@ -47,7 +46,6 @@ authRouter.post("/login", async (req, res) => {
     const isPasswordValid = await user.validatePassword(password);
 
     if (isPasswordValid) {
-      // Create a JWT Token
       const token = await user.getJWT();
       res.cookie("token", token, {
         expires: new Date(Date.now() + 8 * 3600000),
