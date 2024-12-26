@@ -1,11 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+require("dotenv").config();
 
 const connectDB = async () => {
-    try {
-        await mongoose.connect("mongodb+srv://sunsingh162:v52RUHP0DQmTfhRQ@sunnycluster.kzqef.mongodb.net/FormApp")
-    } catch (error) {
-        console.log("MongoDB connection is failed" + error)
-    }
-}
+  try {
+    await mongoose.connect(process.env.MONGO_URL);
+  } catch (error) {
+    console.log("MongoDB connection is failed" + error);
+  }
+};
 
-module.exports = connectDB
+module.exports = connectDB;
