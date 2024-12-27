@@ -4,6 +4,8 @@ require("dotenv").config();
 const cors = require("cors");
 
 const userRoute = require("./routes/userRoute");
+const folderRoute = require("./routes/FolderRoute");
+const formRoute = require("./routes/formRoute");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -31,3 +33,5 @@ app.use("/health", (req, res) => {
 });
 
 app.use("/user", userRoute);
+app.use("/api", folderRoute);
+app.use("/formapi", formRoute);
