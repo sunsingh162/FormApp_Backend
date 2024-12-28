@@ -2,6 +2,7 @@ const express = require("express");
 const connectDB = require("./config/database");
 require("dotenv").config();
 const cors = require("cors");
+const errorHandler = require("./middlewares/errorHandler");
 
 const userRoute = require("./routes/userRoute");
 const folderRoute = require("./routes/FolderRoute");
@@ -37,3 +38,5 @@ app.use("/user", userRoute);
 app.use("/api", folderRoute);
 app.use("/formapi", formRoute);
 app.use("/response", userReponse);
+
+app.use(errorHandler);
