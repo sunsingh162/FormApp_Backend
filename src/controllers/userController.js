@@ -45,9 +45,10 @@ const loginUser = async (req, res, next) => {
           { userID: existingUser._id, userName: existingUser.name },
           PRIVATE_SIGN_KEY,
           {
-            expiresIn: "1h",
+            expiresIn: "24h",
           }
         );
+        
         res.status(200).json({
           message: "Login Successful",
           email: existingUser.email,
