@@ -5,7 +5,7 @@ const cors = require("cors");
 const errorHandler = require("./middlewares/errorHandler");
 
 const userRoute = require("./routes/userRoute");
-const folderRoute = require("./routes/FolderRoute");
+const folderRoute = require("./routes/folderRoute");
 const formRoute = require("./routes/formRoute");
 const userReponse = require("./routes/userResRoute");
 
