@@ -4,8 +4,8 @@
   "description": "Form app ",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/app.js",
-    "test": "forms"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
   },
   "keywords": [
     "forms",
